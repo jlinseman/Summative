@@ -10,7 +10,9 @@ class trivialPursuit
 }
   
 // Print rules method
-  public static void rulesPrint(String getMenu, String goBack)
+  public static void rulesPrint(String getMenu)
+  {
+
   {
     if(getMenu.equals  ("Play") || getMenu.equals  ("play"))
       System.out.println("To go back to Main menu please enter Main");
@@ -19,27 +21,37 @@ class trivialPursuit
       System.out.println("Their are points given to player depending on the hardness of the question");
   }
   {
+    String goBack = "";
       goBack = In.getString();
       if (goBack.equals ("Main") || goBack.equals ("main"))
+      {
+        mainMenu();
+      }
        
       
   }
-  
-// Main method    
-  public static void main (String[] args)
+  }
+
+  public static void mainMenu()
   {
-    String goBack = "";
-    String getMenu = "";
-    // Main menu
+  // Main menu
     System.out.println("Welcome to Trivial Pursuit");
     System.out.println("");  
     System.out.println("PLAY(To play the game enter Play)");
     System.out.println("RULES(To see rules enter Rules)");
     System.out.println("QUIT(To quit enter 0)");
     System.out.println("");
-
+  }
+  
+// Main method    
+  public static void main (String[] args)
+  {
+    mainMenu();
+    String getMenu = "";
     getMenu = In.getString();
-    proQuit(getMenu);
+    
+
     rulesPrint(getMenu);
+    proQuit(getMenu);
   }
 }
