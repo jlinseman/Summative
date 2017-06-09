@@ -1,0 +1,10 @@
+    {
+      String goBack = "";
+      goBack = In.getString();
+      if (goBack.equals ("Main") || goBack.equals ("main"))
+      {
+        mainMenu();
+      }
+      
+      
+    }
