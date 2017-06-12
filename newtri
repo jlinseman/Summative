@@ -1,0 +1,36 @@
+class trivialPursuit1
+{
+  public static void sports (String anwSports)
+  {
+    String enter = "";
+    System.out.println(" You have picked Sports \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
+    System.out.println("Are You READYYYY!!!");
+      enter = In.getString();
+    System.out.println("Who has the most titles in the NBA \n 1. Los Angeles Lakers \n 2. Boston Celtics \n 3. Chicago Bulls \n 4. Golden State Warriors");
+    
+    
+  }
+   public static void main (String[] args)
+  {
+     String anwSports = "";
+     String getCatego = "";
+     //String[] categories = new String{Geography, Entertainment, History, Sports }; 
+     String player1 = "";
+     String player2 = "";
+       System.out.println("* This game is to be played with two players \n* To win the game a player must get all six wedge \n* Their are points given to player depending on the difficulty of the question \n At the end of the round player or players will be givin wedge");
+       System.out.println("Please enter Player 1 name");
+         player1 = In.getString();
+         System.out.println("Please enter Player 2 name");
+         player2 = In.getString();
+         System.out.println("Welcome to the game " + player1 + " and " + player2);
+         System.out.println("Please pick Catergories \n 1. Sports \n 2. Geography \n 3. Enterainment \n 4. History ");
+         getCatego = In.getString();
+         if(getCatego.equals  ("1") )
+         {
+           sports();
+         }
+         
+         
+         
+   }
+}
