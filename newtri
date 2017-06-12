@@ -1,36 +1,95 @@
 class trivialPursuit1
 {
+  /*
+   * Categorie Sports
+   * 
+   * To display sports questions and get the user to anwser them
+   * 
+   * */
   public static void sports (String anwSports)
   {
     String enter = "";
     System.out.println(" You have picked Sports \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
     System.out.println("Are You READYYYY!!!");
-      enter = In.getString();
-    System.out.println("Who has the most titles in the NBA \n 1. Los Angeles Lakers \n 2. Boston Celtics \n 3. Chicago Bulls \n 4. Golden State Warriors");
+    enter = In.getString();
+    System.out.println("Q1. Who has the most final's titles in the NBA? \n 1. Los Angeles Lakers \n 2. Boston Celtics \n 3. Chicago Bulls \n 4. Golden State Warriors");
+    anwSports = In.getString();
+    if(anwSports.equals  ("2"))
+    {
+      System.out.println("YOU are CORRECT!!");
+    }
+    else 
+    {
+      System.out.println("Sorry you are wrong...");
+    }
+    System.out.println("Q2. Michael Jordan played in the NBA for the Chicago Bulls and which other team? \n 1. Los Angeles Lakers \n 2. Washington Wizards \n 3. New York Knicks \n 4. San Antonio Spurs");
+    anwSports = In.getString();
+    if(anwSports.equals  ("2"))
+    {
+      System.out.println("YOU are CORRECT!!");
+    }
+    else 
+    {
+      System.out.println("Sorry you are wrong...");
+    }
+    System.out.println("Q3. At which Summer Olympics in Rome did Muhammad Ali win gold in the light heavyweight division? \n 1. 1959 \n 2. 1955 \n 3. 1960 \n 4. 1961");
+    anwSports = In.getString();
+    if(anwSports.equals  ("3"))
+    {
+      System.out.println("YOU are CORRECT!!");
+    }
+    else 
+    {
+      System.out.println("Sorry you are wrong...");
+    }
+    System.out.println("Q4. Which sport has the most teams \n 1. NFL \n 2. NBA \n 3. MLB \n 4. NHL");
+    anwSports = In.getString();
+    if(anwSports.equals  ("1"))
+    {
+      System.out.println("YOU are CORRECT!!");
+    }
+    else 
+    {
+      System.out.println("Sorry you are wrong...");
+    }
+        System.out.println("Q5. Who has the most NBA rings \n 1. Kobe Bryant \n 2. Lebron James \n 3. Michael Jordan \n 4. Bill Russell");
+    anwSports = In.getString();
+    if(anwSports.equals  ("4"))
+    {
+      System.out.println("YOU are CORRECT!!");
+    }
+    else 
+    {
+      System.out.println("Sorry you are wrong...");
+    }
+    
+  }
+  /*
+   * Main Method
+   * 
+   * Prints rules and gets users names.
+   * */
+  public static void main (String[] args)
+  {
+    String anwSports = "";
+    String getCatego = "";
+    //String[] categories = new String{Geography, Entertainment, History, Sports }; 
+    String player1 = "";
+    String player2 = "";
+    System.out.println("* This game is to be played with two players \n* To win the game a player must get all six wedge \n* Their are points given to player depending on the difficulty of the question \n At the end of the round player or players will be givin wedge");
+    System.out.println("Please enter Player 1 name");
+    player1 = In.getString();
+    System.out.println("Please enter Player 2 name");
+    player2 = In.getString();
+    System.out.println("Welcome to the game " + player1 + " and " + player2);
+    System.out.println("Please pick Catergories \n 1. Sports \n 2. Geography \n 3. Enterainment \n 4. History ");
+    getCatego = In.getString();
+    if(getCatego.equals  ("1") )
+    {
+      sports(anwSports);
+    }
+    
     
     
   }
-   public static void main (String[] args)
-  {
-     String anwSports = "";
-     String getCatego = "";
-     //String[] categories = new String{Geography, Entertainment, History, Sports }; 
-     String player1 = "";
-     String player2 = "";
-       System.out.println("* This game is to be played with two players \n* To win the game a player must get all six wedge \n* Their are points given to player depending on the difficulty of the question \n At the end of the round player or players will be givin wedge");
-       System.out.println("Please enter Player 1 name");
-         player1 = In.getString();
-         System.out.println("Please enter Player 2 name");
-         player2 = In.getString();
-         System.out.println("Welcome to the game " + player1 + " and " + player2);
-         System.out.println("Please pick Catergories \n 1. Sports \n 2. Geography \n 3. Enterainment \n 4. History ");
-         getCatego = In.getString();
-         if(getCatego.equals  ("1") )
-         {
-           sports();
-         }
-         
-         
-         
-   }
 }
