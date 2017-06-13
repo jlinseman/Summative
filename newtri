@@ -44,6 +44,11 @@ class trivialPursuit1
     geographyQ[9] = "1";
     return geographyQ;
   }
+  // Decalring Array
+  static String[] historyQ = new String[10]
+    public static String[] getHistQuestions()
+    historyQ[0] = "Q1. What year did WW1 Start? \n 1. 1915 \n 2. 1918 \n 3. 1916 \n 4. 1914"
+    historyQ[1] = "4"
   /*
    * Categorie Geography
    * 
@@ -150,6 +155,8 @@ public static void main (String[] args)
   String anwSportsP2 = "";
   String anwGeoP1 = "";
   String anwGeoP2 = "";
+  String anwHistoryP1 = "";
+  String amwHistoryP2 = "";
   String getCatego = "";
   //String[] categories = new String{Geography, Entertainment, History, Sports }; 
   String player1 = "";
