@@ -45,10 +45,61 @@ class trivialPursuit1
     return geographyQ;
   }
   // Decalring Array
-  static String[] historyQ = new String[10]
+  static String[] historyQ = new String[10];
+  
     public static String[] getHistQuestions()
-    historyQ[0] = "Q1. What year did WW1 Start? \n 1. 1915 \n 2. 1918 \n 3. 1916 \n 4. 1914"
-    historyQ[1] = "4"
+    {
+    historyQ[0] = "Q1. What year did world war 1 Start? \n 1. 1915 \n 2. 1918 \n 3. 1916 \n 4. 1914";
+    historyQ[1] = "4";
+    historyQ[2] = "Q1. What year did world war 1 End? \n 1. 1914 \n 2. 1969 \n 3. 1918 \n 4.1925";
+    historyQ[3] = "3";
+    historyQ[4] = "who started world war 1? \n 1. Wiz Khalifa \n 2. Meme Makers \n 3. Egyptians \n 4.  Gavrilo Princip";
+    historyQ[5] = "4";
+    historyQ[6] = "who was the leader of germany during world war 1? \n 1. Wilhelm II \n 2. Adalbert \n 3. dal \n 4. Gavri";
+    historyQ[7] = "1";
+    historyQ[8] = "who was the superpower before world war 2 \n 1.United States \n 2. British \n 3. Germany \n 4. Soviet Union";
+    historyQ[9] = "2";
+      return historyQ;
+    }
+     /*
+   * Categorie History
+   * 
+   * To display History questions and get the user to anwser them
+   * 
+   * */
+    public static void history(String anwHisP1, String anwHisP2)
+    {
+    String enter = "";
+    System.out.println(" You have picked History \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
+    System.out.print("Press enter if YOU ARE READYYYY!!!");
+    enter = In.getString();
+    String[] getHQ = getHistQuestions();
+    for(int i = 0; i < 10; i++)
+    {
+      System.out.println(getHQ[i]);
+      anwHisP1 = In.getString();
+      anwHisP2 = In.getString();
+      if(anwHisP1.equals(getHQ[i+1]))
+      {      
+        System.out.println("YOU are CORRECT!!");  
+      }
+      else 
+      {
+        System.out.println("Sorry you are wrong...");
+      }
+      if(anwHisP2.equals(getHQ[i+1]))
+      {
+        System.out.println("YOU are CORRECT!!");
+      } 
+      else   
+      {
+        System.out.println("Sorry you are wrong...");
+      }
+      i++;
+    }
+    
+    }
+    
   /*
    * Categorie Geography
    * 
@@ -155,8 +206,8 @@ public static void main (String[] args)
   String anwSportsP2 = "";
   String anwGeoP1 = "";
   String anwGeoP2 = "";
-  String anwHistoryP1 = "";
-  String amwHistoryP2 = "";
+  String anwHisP1 = "";
+  String anwHisP2 = "";
   String getCatego = "";
   //String[] categories = new String{Geography, Entertainment, History, Sports }; 
   String player1 = "";
@@ -176,6 +227,10 @@ public static void main (String[] args)
   if(getCatego.equals  ("2") )
   {
     geography(anwGeoP1, anwGeoP2); 
+  }
+    if(getCatego.equals  ("4") )
+  {
+    history(anwHisP1, anwHisP2); 
   }
 }
 }
