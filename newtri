@@ -1,9 +1,9 @@
 class trivialPursuit1
 {
   /*
-   * Categorie Geography
+   * Score for player 1
    * 
-   * To display geography questions and get the user to anwser them
+   * to count the score for player 1 
    * 
    * */
   public static int scoreP1(int scoreCountP1) 
@@ -11,12 +11,25 @@ class trivialPursuit1
     scoreCountP1++;
     return scoreCountP1;
   }
+    /*
+   * Score for player 2
+   * 
+   * to count the score for player 2
+   * 
+   * */
     public static int scoreP2(int scoreCountP2) 
   {
     scoreCountP2++;
     return scoreCountP2;
   }
+    // Decalring Array 
   static String[] geographyQ = new String[10];
+    /*
+   * Array geo questions
+   * 
+   * To store the questions and the anwsers
+   * 
+   * */
   public static String[] getGeoQuestions()
   {
     geographyQ[0] = "Q1. Which ocean lies on the east coast of the United States? \n 1. Indian \n 2. Eastern\n 3. Pacific \n 4. Atlantic";
@@ -31,9 +44,12 @@ class trivialPursuit1
     geographyQ[9] = "1";
     return geographyQ;
   }
-  
-  
-  
+  /*
+   * Categorie Geography
+   * 
+   * To display geography questions and get the user to anwser them
+   * 
+   * */  
   public static void geography (String anwGeoP1, String anwGeoP2)
   {
     
@@ -68,7 +84,21 @@ class trivialPursuit1
     
     
   }
-
+   static String[] sportsQ = new String[10];
+  public static String[] getSportsQuestions()
+     {
+    sportsQ[0] = "Q1. Who has the most final's titles in the NBA? \n 1. Los Angeles Lakers \n 2. Boston Celtics \n 3. Chicago Bulls \n 4. Golden State Warriors";
+    sportsQ[1] = "2";
+    sportsQ[2] = "Q2. Michael Jordan played in the NBA for the Chicago Bulls and which other team? \n 1. Los Angeles Lakers \n 2. Washington Wizards \n 3. New York Knicks \n 4. San Antonio Spurs";
+    sportsQ[3] = "2";
+    sportsQ[4] = "Q3. At which Summer Olympics in Rome did Muhammad Ali win gold in the light heavyweight division? \n 1. 1959 \n 2. 1955 \n 3. 1960 \n 4. 1961";
+    sportsQ[5] = "3";
+    sportsQ[6] = "Q4. Which sport has the most teams \n 1. NFL \n 2. NBA \n 3. MLB \n 4. NHL";
+    sportsQ[7] = "1";
+    sportsQ[8] = "Q5. Who has the most NBA rings \n 1. Kobe Bryant \n 2. Lebron James \n 3. Michael Jordan \n 4. Bill Russell";
+    sportsQ[9] = "4";
+    return sportsQ;
+  }
 
 /*
  * Categorie Sports
@@ -76,15 +106,19 @@ class trivialPursuit1
  * To display sports questions and get the user to anwser them
  * 
  * */
-public static void sports (String anwSports)
+public static void sports (String anwSportsP1, String anwSportsP2)
 {
   String enter = "";
   System.out.println(" You have picked Sports \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
   System.out.println("Are You READYYYY!!!");
   enter = In.getString();
-  System.out.println("Q1. Who has the most final's titles in the NBA? \n 1. Los Angeles Lakers \n 2. Boston Celtics \n 3. Chicago Bulls \n 4. Golden State Warriors");
-  anwSports = In.getString();
-  if(anwSports.equals  ("2"))
+  String[] getSQ = getSportsQuestions();
+  for(int i = 0; i < 10; i++)
+  {
+    System.out.println(getSQ[i]);
+    anwSportsP1 = In.getString();
+    anwSportsP2 = In.getString();
+     if(anwSportsP1.equals  (getSQ[i+1]))
   {
     System.out.println("YOU are CORRECT!!");
   }
@@ -92,9 +126,7 @@ public static void sports (String anwSports)
   {
     System.out.println("Sorry you are wrong...");
   }
-  System.out.println("Q2. Michael Jordan played in the NBA for the Chicago Bulls and which other team? \n 1. Los Angeles Lakers \n 2. Washington Wizards \n 3. New York Knicks \n 4. San Antonio Spurs");
-  anwSports = In.getString();
-  if(anwSports.equals  ("2"))
+if(anwSportsP2.equals  (getSQ[i+1]))
   {
     System.out.println("YOU are CORRECT!!");
   }
@@ -102,37 +134,8 @@ public static void sports (String anwSports)
   {
     System.out.println("Sorry you are wrong...");
   }
-  System.out.println("Q3. At which Summer Olympics in Rome did Muhammad Ali win gold in the light heavyweight division? \n 1. 1959 \n 2. 1955 \n 3. 1960 \n 4. 1961");
-  anwSports = In.getString();
-  if(anwSports.equals  ("3"))
-  {
-    System.out.println("YOU are CORRECT!!");
+  i++;
   }
-  else 
-  {
-    System.out.println("Sorry you are wrong...");
-  }
-  System.out.println("Q4. Which sport has the most teams \n 1. NFL \n 2. NBA \n 3. MLB \n 4. NHL");
-  anwSports = In.getString();
-  if(anwSports.equals  ("1"))
-  {
-    System.out.println("YOU are CORRECT!!");
-  }
-  else 
-  {
-    System.out.println("Sorry you are wrong...");
-  }
-  System.out.println("Q5. Who has the most NBA rings \n 1. Kobe Bryant \n 2. Lebron James \n 3. Michael Jordan \n 4. Bill Russell");
-  anwSports = In.getString();
-  if(anwSports.equals  ("4"))
-  {
-    System.out.println("YOU are CORRECT!!");
-  }
-  else 
-  {
-    System.out.println("Sorry you are wrong...");
-  }
-  
 }
 /*
  * Main Method
@@ -143,7 +146,7 @@ public static void main (String[] args)
 {
   int scoreCountP1 = 0;
   int scoreCountP2 = 0;
-  String anwSports = "";
+  String anwSportsP1 = "";
   String anwSportsP2 = "";
   String anwGeoP1 = "";
   String anwGeoP2 = "";
@@ -161,7 +164,7 @@ public static void main (String[] args)
   getCatego = In.getString();
   if(getCatego.equals  ("1") )
   {
-    sports(anwSports);
+    sports(anwSportsP1, anwSportsP2);
   }
   if(getCatego.equals  ("2") )
   {
