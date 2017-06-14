@@ -5,8 +5,9 @@ class trivialPursuit1
   static String[] geographyQ = new String[10];
   static String[] entertainmentQ = new String[10];
   static String[] historyQ = new String[10];
+  static String[] musicQ = new String[10];
   
- /*
+  /*
    * Array sprots questions
    * 
    * To store the questions and the anwsers
@@ -46,7 +47,7 @@ class trivialPursuit1
     geographyQ[9] = "1";
     return geographyQ;
   }
-    /*
+  /*
    * Array Entertainment questions
    * 
    * To store the questions and the anwsers
@@ -86,7 +87,27 @@ class trivialPursuit1
     historyQ[9] = "2";
     return historyQ;
   }
-   /*
+    /*
+   * Array sprots questions
+   * 
+   * To store the questions and the anwsers
+   * 
+   * */
+  public static String[] getMusicQuestions()
+  {
+    sportsQ[0] = "Q1. Who is the first rapper to win Grammy without selling physical copies of his music \n 1. Migos \n 2. Chance The Rapper \n 3. Wiz Khalifa \n 4. Adele";
+    sportsQ[1] = "2";
+    sportsQ[2] = "Q2. Who was the lead singer of the band" + "Queen?" + "\n 1. Wiz Khalifa \n 2. Freddie Mercury \n 3. T-Pain \n 4. Lil Pump";
+    sportsQ[3] = "2";
+    sportsQ[4] = "Q3. Which one of Prince's songs reached highest on the music charts? \n 1. 1999 \n 2. I Wanna Be Your Lover \n 3. When Dove's Cry  \n 4. 1961";
+    sportsQ[5] = "3";
+    sportsQ[6] = "Q4. Which sport has the most teams \n 1. NFL \n 2. NBA \n 3. MLB \n 4. NHL";
+    sportsQ[7] = "1";
+    sportsQ[8] = "Q5. Who has the most NBA rings \n 1. Kobe Bryant \n 2. Lebron James \n 3. Michael Jordan \n 4. Bill Russell";
+    sportsQ[9] = "4";
+    return musicQ;
+  }  
+  /*
    * Categorie Sports
    * 
    * To display sports questions and get the user to anwser them
@@ -149,13 +170,13 @@ class trivialPursuit1
     return finalCount;  
   }
   
-   /*
+  /*
    * Categorie Geography
    * 
    * To display geography questions and get the user to anwser them
    * 
    * */  
-  public static int[] geography (String anwGeoP1, String anwGeoP2, String[] finalCount)
+  public static int[] geography (String anwGeoP1, String anwGeoP2, int[] finalCount)
   {
     int scoreGeoCountP1 = 0;
     int scoreGeoCountP2 = 0;
@@ -168,7 +189,7 @@ class trivialPursuit1
     String[] getGQ = getGeoQuestions();
     for(int i = 0; i < 10; i++)
     {
-         if(anwGeoP1.equals  (getGQ[i+1] ))
+      if(anwGeoP1.equals  (getGQ[i+1] ))
       {
         System.out.println("YOU are CORRECT!!");
         if(i == 8)
@@ -203,27 +224,27 @@ class trivialPursuit1
         System.out.println("Sorry you are wrong...");
       }
       i++;
-          finalCount[0] = finalCount[0] + scoreGeoCountP1 + wedgeCountP1;
-    finalCount[1] = finalCount[1] + scoreGeoCountP2 + wedgeCountP2 ;
-    
-    }
-    return finalCount[];
-  }
 
+    }
+      finalCount[0] = finalCount[0] + scoreGeoCountP1 + wedgeCountP1;
+      finalCount[1] = finalCount[1] + scoreGeoCountP2 + wedgeCountP2 ;
+      return finalCount;  
+  }
   
-    /*
-     * Categorie entertainment
-     * 
-     * To display entertainment questions and get the user to anwser them
-     * 
-     * */
+  
+  /*
+   * Categorie entertainment
+   * 
+   * To display entertainment questions and get the user to anwser them
+   * 
+   * */
   public static int[] entertainment(String anwEntP1, String anwEntP2, int[] finalCount)
-    {
-      int scoreEntCountP1 = 0;
-      int scoreEntCountP2 = 0;
+  {
+    int scoreEntCountP1 = 0;
+    int scoreEntCountP2 = 0;
     int wedgeCountP1 = 0;
     int wedgeCountP2 = 0;
-        String enter = "";
+    String enter = "";
     System.out.println(" You have picked Geograpghy \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
     System.out.print("Press enter if YOU ARE READYYYY!!!");
     enter = In.getString();
@@ -273,48 +294,73 @@ class trivialPursuit1
     finalCount[1] = scoreEntCountP2 + wedgeCountP2 ; 
     return finalCount;  
   }
-
-    
- 
+  
+  
+  
   /*
    * Categorie History
    * 
    * To display History questions and get the user to anwser them
    * 
    * */
-  public static void history(String anwHisP1, String anwHisP2)
+  public static int[] history(String anwHisP1, String anwHisP2, int[] finalCount)
   {
+    int scoreHisCountP1 = 0;
+    int scoreHisCountP2 = 0;
+    int wedgeCountP1 = 0;
+    int wedgeCountP2 = 0;
     String enter = "";
     System.out.println(" You have picked History \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
     System.out.print("Press enter if YOU ARE READYYYY!!!");
     enter = In.getString();
     String[] getHQ = getHistQuestions();
-    for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 10; i++)
     {
       System.out.println(getHQ[i]);
       anwHisP1 = In.getString();
-      anwHisP2 = In.getString();
-      if(anwHisP1.equals(getHQ[i+1]))
-      {      
-        System.out.println("YOU are CORRECT!!");  
+      anwHisP2 = In.getString();      
+      if(anwHisP1.equals  (getHQ[i+1] ))
+      {
+        System.out.println("YOU are CORRECT!!");
+        if(i == 8)
+        {
+          wedgeCountP1 = getWedgeCount(wedgeCountP1); 
+        }
+        else
+        {
+          scoreHisCountP1 = scoreP1(scoreHisCountP1);
+        }
       }
+      
       else 
       {
         System.out.println("Sorry you are wrong...");
       }
-      if(anwHisP2.equals(getHQ[i+1]))
+      if(anwHisP2.equals  (getHQ[i+1] ))
       {
         System.out.println("YOU are CORRECT!!");
-      } 
-      else   
+        if(i == 8)
+        {
+          wedgeCountP2 = getWedgeCount(wedgeCountP2); 
+        }
+        else
+        {
+          scoreHisCountP2 = scoreP2(scoreHisCountP2);
+        }
+      }
+      
+      else 
       {
         System.out.println("Sorry you are wrong...");
       }
       i++;
     }
-    //return totalCount
+    finalCount[0] = scoreHisCountP1 + wedgeCountP1;
+    finalCount[1] = scoreHisCountP2 + wedgeCountP2 ; 
+    return finalCount;  
   }
-    /*
+
+  /*
    * Score for player 1
    * 
    * to count the score for player 1 
@@ -377,14 +423,14 @@ class trivialPursuit1
     {
       geography(anwGeoP1, anwGeoP2, finalCount); 
     }
-     if(getCatego.equals  ("3") )
+    if(getCatego.equals  ("3") )
     {
       entertainment(anwEntP1, anwEntP2, finalCount); 
     }
     
     if(getCatego.equals  ("4") )
     {
-      history(anwHisP1, anwHisP2); 
+      history(anwHisP1, anwHisP2, finalCount); 
     }
   }
 }
