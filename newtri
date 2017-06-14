@@ -155,7 +155,7 @@ class trivialPursuit1
    * To display geography questions and get the user to anwser them
    * 
    * */  
-  public static void geography (String anwGeoP1, String anwGeoP2, String[] finalCount)
+  public static int[] geography (String anwGeoP1, String anwGeoP2, String[] finalCount)
   {
     int scoreGeoCountP1 = 0;
     int scoreGeoCountP2 = 0;
@@ -205,8 +205,9 @@ class trivialPursuit1
       i++;
           finalCount[0] = finalCount[0] + scoreGeoCountP1 + wedgeCountP1;
     finalCount[1] = finalCount[1] + scoreGeoCountP2 + wedgeCountP2 ;
-    return finalCount[];
+    
     }
+    return finalCount[];
   }
 
   
@@ -216,8 +217,12 @@ class trivialPursuit1
      * To display entertainment questions and get the user to anwser them
      * 
      * */
-    public static void entertainment(String anwEntP1, String anwEntP2, int[] finalCount)
+  public static int[] entertainment(String anwEntP1, String anwEntP2, int[] finalCount)
     {
+      int scoreEntCountP1 = 0;
+      int scoreEntCountP2 = 0;
+    int wedgeCountP1 = 0;
+    int wedgeCountP2 = 0;
         String enter = "";
     System.out.println(" You have picked Geograpghy \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
     System.out.print("Press enter if YOU ARE READYYYY!!!");
@@ -225,10 +230,10 @@ class trivialPursuit1
     String[] getEQ = getEnterQuestions();
     for(int i = 0; i < 10; i++)
     {
-      System.out.println(getSQ[i]);
-      anwSportsP1 = In.getString();
-      anwSportsP2 = In.getString();      
-      if(anwSportsP1.equals  (getSQ[i+1] ))
+      System.out.println(getEQ[i]);
+      anwEntP1 = In.getString();
+      anwEntP2 = In.getString();      
+      if(anwEntP1.equals  (getEQ[i+1] ))
       {
         System.out.println("YOU are CORRECT!!");
         if(i == 8)
@@ -237,7 +242,7 @@ class trivialPursuit1
         }
         else
         {
-          scoreSportsCountP1 = scoreP1(scoreSportsCountP1);
+          scoreEntCountP1 = scoreP1(scoreEntCountP1);
         }
       }
       
@@ -245,7 +250,7 @@ class trivialPursuit1
       {
         System.out.println("Sorry you are wrong...");
       }
-      if(anwSportsP2.equals  (getSQ[i+1] ))
+      if(anwEntP2.equals  (getEQ[i+1] ))
       {
         System.out.println("YOU are CORRECT!!");
         if(i == 8)
@@ -254,7 +259,7 @@ class trivialPursuit1
         }
         else
         {
-          scoreSportsCountP2 = scoreP2(scoreSportsCountP2);
+          scoreEntCountP2 = scoreP2(scoreEntCountP2);
         }
       }
       
@@ -264,12 +269,12 @@ class trivialPursuit1
       }
       i++;
     }
-    finalCount[0] = scoreSportsCountP1 + wedgeCountP1;
-    finalCount[1] = scoreSportsCountP2 + wedgeCountP2 ; 
+    finalCount[0] = scoreEntCountP1 + wedgeCountP1;
+    finalCount[1] = scoreEntCountP2 + wedgeCountP2 ; 
     return finalCount;  
   }
 
-    }
+    
  
   /*
    * Categorie History
@@ -374,7 +379,7 @@ class trivialPursuit1
     }
      if(getCatego.equals  ("3") )
     {
-      entertainment(anwEntP1, anwEntP2); 
+      entertainment(anwEntP1, anwEntP2, finalCount); 
     }
     
     if(getCatego.equals  ("4") )
