@@ -1,30 +1,32 @@
 class trivialPursuit1
 {
-  /*
-   * Score for player 1
-   * 
-   * to count the score for player 1 
-   * 
-   * */
-  public static int scoreP1(int scoreCountP1) 
-  {
-    scoreCountP1++;
-    return scoreCountP1;
-  }
-    /*
-   * Score for player 2
-   * 
-   * to count the score for player 2
-   * 
-   * */
-    public static int scoreP2(int scoreCountP2) 
-  {
-    scoreCountP2++;
-    return scoreCountP2;
-  }
-    // Decalring Array 
+  // Decalring Array 
+  static String[] sportsQ = new String[10];
   static String[] geographyQ = new String[10];
-    /*
+  static String[] entertainmentQ = new String[10];
+  static String[] historyQ = new String[10];
+  
+ /*
+   * Array sprots questions
+   * 
+   * To store the questions and the anwsers
+   * 
+   * */
+  public static String[] getSportsQuestions()
+  {
+    sportsQ[0] = "Q1. Who has the most final's titles in the NBA? \n 1. Los Angeles Lakers \n 2. Boston Celtics \n 3. Chicago Bulls \n 4. Golden State Warriors";
+    sportsQ[1] = "2";
+    sportsQ[2] = "Q2. Michael Jordan played in the NBA for the Chicago Bulls and which other team? \n 1. Los Angeles Lakers \n 2. Washington Wizards \n 3. New York Knicks \n 4. San Antonio Spurs";
+    sportsQ[3] = "2";
+    sportsQ[4] = "Q3. At which Summer Olympics in Rome did Muhammad Ali win gold in the light heavyweight division? \n 1. 1959 \n 2. 1955 \n 3. 1960 \n 4. 1961";
+    sportsQ[5] = "3";
+    sportsQ[6] = "Q4. Which sport has the most teams \n 1. NFL \n 2. NBA \n 3. MLB \n 4. NHL";
+    sportsQ[7] = "1";
+    sportsQ[8] = "Q5. Who has the most NBA rings \n 1. Kobe Bryant \n 2. Lebron James \n 3. Michael Jordan \n 4. Bill Russell";
+    sportsQ[9] = "4";
+    return sportsQ;
+  }  
+  /*
    * Array geo questions
    * 
    * To store the questions and the anwsers
@@ -44,11 +46,34 @@ class trivialPursuit1
     geographyQ[9] = "1";
     return geographyQ;
   }
-  // Decalring Array
-  static String[] historyQ = new String[10];
-  
-    public static String[] getHistQuestions()
-    {
+    /*
+   * Array Entertainment questions
+   * 
+   * To store the questions and the anwsers
+   * 
+   * */
+  public static String[] getEnterQuestions()
+  {
+    entertainmentQ[0] = "1. How many seasons of F.R.I.E.N.D.S are there? \n 1. still going \n 2. 10 \n 3. 7 \n 4. 12";
+    entertainmentQ[1] = "2";
+    entertainmentQ[2] = "2. What is the name of the new show starring Matt LeBlanc \n 1. F.R.I.E.N.D.S \n 2. Man With a Plan \n 3. Joey! \n 4. FOOL";
+    entertainmentQ[3] = "2";
+    entertainmentQ[4] = "3. The first movie of the Fast and Furious franchise was released in what year? \n 1. 2001 \n 2.2005 \n 3. 2002 \n 4. 2007";
+    entertainmentQ[5] = "1";
+    entertainmentQ[6] = "4. In the movie The Wizard of Oz, what did the Scarecrow want from the wizard? \n 1. Corn \n 2. A brain \n 3. Phone \n 4. Magic";
+    entertainmentQ[7] = "2";
+    entertainmentQ[8] = "5. What is Michael J. Fox's middle name? \n 1. Adam \n 2. Aaron \n 3. Andrew \n 4. Antonio";
+    entertainmentQ[9] = "3";
+    return entertainmentQ;
+  }
+  /*
+   * Array History questions
+   * 
+   * To store the questions and the anwsers
+   * 
+   * */
+  public static String[] getHistQuestions()
+  {
     historyQ[0] = "Q1. What year did world war 1 Start? \n 1. 1915 \n 2. 1918 \n 3. 1916 \n 4. 1914";
     historyQ[1] = "4";
     historyQ[2] = "Q1. What year did world war 1 End? \n 1. 1914 \n 2. 1969 \n 3. 1918 \n 4.1925";
@@ -59,16 +84,201 @@ class trivialPursuit1
     historyQ[7] = "1";
     historyQ[8] = "who was the superpower before world war 2 \n 1.United States \n 2. British \n 3. Germany \n 4. Soviet Union";
     historyQ[9] = "2";
-      return historyQ;
+    return historyQ;
+  }
+   /*
+   * Categorie Sports
+   * 
+   * To display sports questions and get the user to anwser them
+   * 
+   * */
+  public static int[] sports (String anwSportsP1, String anwSportsP2, int[] finalCount)
+  {
+    int scoreSportsCountP1 = 0;
+    int scoreSportsCountP2 = 0;
+    int wedgeCountP1 = 0;
+    int wedgeCountP2 = 0;
+    String enter = "";
+    System.out.println(" You have picked Sports \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
+    System.out.println("Are You READYYYY!!!");
+    enter = In.getString();
+    String[] getSQ = getSportsQuestions();
+    for(int i = 0; i < 10; i++)
+    {
+      System.out.println(getSQ[i]);
+      anwSportsP1 = In.getString();
+      anwSportsP2 = In.getString();      
+      if(anwSportsP1.equals  (getSQ[i+1] ))
+      {
+        System.out.println("YOU are CORRECT!!");
+        if(i == 8)
+        {
+          wedgeCountP1 = getWedgeCount(wedgeCountP1); 
+        }
+        else
+        {
+          scoreSportsCountP1 = scoreP1(scoreSportsCountP1);
+        }
+      }
+      
+      else 
+      {
+        System.out.println("Sorry you are wrong...");
+      }
+      if(anwSportsP2.equals  (getSQ[i+1] ))
+      {
+        System.out.println("YOU are CORRECT!!");
+        if(i == 8)
+        {
+          wedgeCountP2 = getWedgeCount(wedgeCountP2); 
+        }
+        else
+        {
+          scoreSportsCountP2 = scoreP2(scoreSportsCountP2);
+        }
+      }
+      
+      else 
+      {
+        System.out.println("Sorry you are wrong...");
+      }
+      i++;
     }
-     /*
+    finalCount[0] = scoreSportsCountP1 + wedgeCountP1;
+    finalCount[1] = scoreSportsCountP2 + wedgeCountP2 ; 
+    return finalCount;  
+  }
+  
+   /*
+   * Categorie Geography
+   * 
+   * To display geography questions and get the user to anwser them
+   * 
+   * */  
+  public static void geography (String anwGeoP1, String anwGeoP2, String[] finalCount)
+  {
+    int scoreGeoCountP1 = 0;
+    int scoreGeoCountP2 = 0;
+    int wedgeCountP1 = 0;
+    int wedgeCountP2 = 0;
+    String enter = "";
+    System.out.println(" You have picked Geograpghy \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
+    System.out.print("Press enter if YOU ARE READYYYY!!!");
+    enter = In.getString();
+    String[] getGQ = getGeoQuestions();
+    for(int i = 0; i < 10; i++)
+    {
+         if(anwGeoP1.equals  (getGQ[i+1] ))
+      {
+        System.out.println("YOU are CORRECT!!");
+        if(i == 8)
+        {
+          wedgeCountP1 = getWedgeCount(wedgeCountP1); 
+        }
+        else
+        {
+          scoreGeoCountP1 = scoreP1(scoreGeoCountP1);
+        }
+      }
+      
+      else 
+      {
+        System.out.println("Sorry you are wrong...");
+      }
+      if(anwGeoP2.equals (getGQ[i+1] ))
+      {
+        System.out.println("YOU are CORRECT!!");
+        if(i == 8)
+        {
+          wedgeCountP2 = getWedgeCount(wedgeCountP2); 
+        }
+        else
+        {
+          scoreGeoCountP2 = scoreP2(scoreGeoCountP2);
+        }
+      }
+      
+      else 
+      {
+        System.out.println("Sorry you are wrong...");
+      }
+      i++;
+          finalCount[0] = finalCount[0] + scoreGeoCountP1 + wedgeCountP1;
+    finalCount[1] = finalCount[1] + scoreGeoCountP2 + wedgeCountP2 ;
+    return finalCount[];
+    }
+  }
+
+  
+    /*
+     * Categorie entertainment
+     * 
+     * To display entertainment questions and get the user to anwser them
+     * 
+     * */
+    public static void entertainment(String anwEntP1, String anwEntP2, int[] finalCount)
+    {
+        String enter = "";
+    System.out.println(" You have picked Geograpghy \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
+    System.out.print("Press enter if YOU ARE READYYYY!!!");
+    enter = In.getString();
+    String[] getEQ = getEnterQuestions();
+    for(int i = 0; i < 10; i++)
+    {
+      System.out.println(getSQ[i]);
+      anwSportsP1 = In.getString();
+      anwSportsP2 = In.getString();      
+      if(anwSportsP1.equals  (getSQ[i+1] ))
+      {
+        System.out.println("YOU are CORRECT!!");
+        if(i == 8)
+        {
+          wedgeCountP1 = getWedgeCount(wedgeCountP1); 
+        }
+        else
+        {
+          scoreSportsCountP1 = scoreP1(scoreSportsCountP1);
+        }
+      }
+      
+      else 
+      {
+        System.out.println("Sorry you are wrong...");
+      }
+      if(anwSportsP2.equals  (getSQ[i+1] ))
+      {
+        System.out.println("YOU are CORRECT!!");
+        if(i == 8)
+        {
+          wedgeCountP2 = getWedgeCount(wedgeCountP2); 
+        }
+        else
+        {
+          scoreSportsCountP2 = scoreP2(scoreSportsCountP2);
+        }
+      }
+      
+      else 
+      {
+        System.out.println("Sorry you are wrong...");
+      }
+      i++;
+    }
+    finalCount[0] = scoreSportsCountP1 + wedgeCountP1;
+    finalCount[1] = scoreSportsCountP2 + wedgeCountP2 ; 
+    return finalCount;  
+  }
+
+    }
+ 
+  /*
    * Categorie History
    * 
    * To display History questions and get the user to anwser them
    * 
    * */
-    public static void history(String anwHisP1, String anwHisP2)
-    {
+  public static void history(String anwHisP1, String anwHisP2)
+  {
     String enter = "";
     System.out.println(" You have picked History \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
     System.out.print("Press enter if YOU ARE READYYYY!!!");
@@ -97,140 +307,79 @@ class trivialPursuit1
       }
       i++;
     }
-    
-    }
-    
+    //return totalCount
+  }
+    /*
+   * Score for player 1
+   * 
+   * to count the score for player 1 
+   * 
+   * */
+  public static int scoreP1(int scoreCountP1) 
+  {
+    scoreCountP1++;
+    return scoreCountP1;
+  }
   /*
-   * Categorie Geography
+   * Score for player 2
    * 
-   * To display geography questions and get the user to anwser them
+   * to count the score for player 2
    * 
-   * */  
-  public static void geography (String anwGeoP1, String anwGeoP2)
+   * */
+  public static int scoreP2(int scoreCountP2) 
   {
-    
-    String enter = "";
-    System.out.println(" You have picked Geograpghy \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
-    System.out.print("Press enter if YOU ARE READYYYY!!!");
-    enter = In.getString();
-    String[] getQ = getGeoQuestions();
-   for(int i = 0; i < 10; i++)
+    scoreCountP2++;
+    return scoreCountP2;
+  }
+  public static int getWedgeCount(int wedgeCount)
+  {
+    wedgeCount=wedgeCount+10;
+    return wedgeCount;
+  }
+  /*
+   * Main Method
+   * 
+   * Prints rules and gets users names.
+   * */
+  public static void main (String[] args)
+  {
+    int[] finalCount = new int[2];
+    String anwSportsP1 = "";
+    String anwSportsP2 = "";
+    String anwGeoP1 = "";
+    String anwGeoP2 = "";
+    String anwHisP1 = "";
+    String anwHisP2 = "";
+    String anwEntP1 = "";
+    String anwEntP2 = "";
+    String getCatego = "";
+    //String[] categories = new String{Geography, Entertainment, History, Sports, Music }; 
+    String player1 = "";
+    String player2 = "";
+    System.out.println("* This game is to be played with two players \n* To win the game a player must get all six wedge \n* Their are points given to player depending on the difficulty of the question \n At the end of the round player or players will be givin wedge");
+    System.out.println("Please enter Player 1 name");
+    player1 = In.getString();
+    System.out.println("Please enter Player 2 name");
+    player2 = In.getString();
+    System.out.println("Welcome to the game " + player1 + " and " + player2);
+    System.out.println("Please pick Catergories \n 1. Sports \n 2. Geography \n 3. Enterainment \n 4. History ");
+    getCatego = In.getString();
+    if(getCatego.equals  ("1") )
     {
-      System.out.println(getQ[i]);
-      anwGeoP1 = In.getString();
-      anwGeoP2 = In.getString();
-      if(anwGeoP1.equals(getQ[i+1]))
-      {      
-        System.out.println("YOU are CORRECT!!");  
-      }
-      else 
-      {
-        System.out.println("Sorry you are wrong...");
-      }
-      if(anwGeoP2.equals(getQ[i+1]))
-      {
-        System.out.println("YOU are CORRECT!!");
-      } 
-      else   
-      {
-        System.out.println("Sorry you are wrong...");
-      }
-      i++;
+      sports(anwSportsP1, anwSportsP2, finalCount);
+    }
+    if(getCatego.equals  ("2") )
+    {
+      geography(anwGeoP1, anwGeoP2, finalCount); 
+    }
+     if(getCatego.equals  ("3") )
+    {
+      entertainment(anwEntP1, anwEntP2); 
     }
     
-    
-  }
-   static String[] sportsQ = new String[10];
-  public static String[] getSportsQuestions()
-     {
-    sportsQ[0] = "Q1. Who has the most final's titles in the NBA? \n 1. Los Angeles Lakers \n 2. Boston Celtics \n 3. Chicago Bulls \n 4. Golden State Warriors";
-    sportsQ[1] = "2";
-    sportsQ[2] = "Q2. Michael Jordan played in the NBA for the Chicago Bulls and which other team? \n 1. Los Angeles Lakers \n 2. Washington Wizards \n 3. New York Knicks \n 4. San Antonio Spurs";
-    sportsQ[3] = "2";
-    sportsQ[4] = "Q3. At which Summer Olympics in Rome did Muhammad Ali win gold in the light heavyweight division? \n 1. 1959 \n 2. 1955 \n 3. 1960 \n 4. 1961";
-    sportsQ[5] = "3";
-    sportsQ[6] = "Q4. Which sport has the most teams \n 1. NFL \n 2. NBA \n 3. MLB \n 4. NHL";
-    sportsQ[7] = "1";
-    sportsQ[8] = "Q5. Who has the most NBA rings \n 1. Kobe Bryant \n 2. Lebron James \n 3. Michael Jordan \n 4. Bill Russell";
-    sportsQ[9] = "4";
-    return sportsQ;
-  }
-
-/*
- * Categorie Sports
- * 
- * To display sports questions and get the user to anwser them
- * 
- * */
-public static void sports (String anwSportsP1, String anwSportsP2)
-{
-  String enter = "";
-  System.out.println(" You have picked Sports \n You will be asked five questions each one will get harder each time \n The fifth question is the one that will give you wedge if you get it right ");
-  System.out.println("Are You READYYYY!!!");
-  enter = In.getString();
-  String[] getSQ = getSportsQuestions();
-  for(int i = 0; i < 10; i++)
-  {
-    System.out.println(getSQ[i]);
-    anwSportsP1 = In.getString();
-    anwSportsP2 = In.getString();
-     if(anwSportsP1.equals  (getSQ[i+1]))
-  {
-    System.out.println("YOU are CORRECT!!");
-  }
-  else 
-  {
-    System.out.println("Sorry you are wrong...");
-  }
-if(anwSportsP2.equals  (getSQ[i+1]))
-  {
-    System.out.println("YOU are CORRECT!!");
-  }
-  else 
-  {
-    System.out.println("Sorry you are wrong...");
-  }
-  i++;
-  }
-}
-/*
- * Main Method
- * 
- * Prints rules and gets users names.
- * */
-public static void main (String[] args)
-{
-  int scoreCountP1 = 0;
-  int scoreCountP2 = 0;
-  String anwSportsP1 = "";
-  String anwSportsP2 = "";
-  String anwGeoP1 = "";
-  String anwGeoP2 = "";
-  String anwHisP1 = "";
-  String anwHisP2 = "";
-  String getCatego = "";
-  //String[] categories = new String{Geography, Entertainment, History, Sports }; 
-  String player1 = "";
-  String player2 = "";
-  System.out.println("* This game is to be played with two players \n* To win the game a player must get all six wedge \n* Their are points given to player depending on the difficulty of the question \n At the end of the round player or players will be givin wedge");
-  System.out.println("Please enter Player 1 name");
-  player1 = In.getString();
-  System.out.println("Please enter Player 2 name");
-  player2 = In.getString();
-  System.out.println("Welcome to the game " + player1 + " and " + player2);
-  System.out.println("Please pick Catergories \n 1. Sports \n 2. Geography \n 3. Enterainment \n 4. History ");
-  getCatego = In.getString();
-  if(getCatego.equals  ("1") )
-  {
-    sports(anwSportsP1, anwSportsP2);
-  }
-  if(getCatego.equals  ("2") )
-  {
-    geography(anwGeoP1, anwGeoP2); 
-  }
     if(getCatego.equals  ("4") )
-  {
-    history(anwHisP1, anwHisP2); 
+    {
+      history(anwHisP1, anwHisP2); 
+    }
   }
-}
 }
