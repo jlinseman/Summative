@@ -47,15 +47,15 @@ class trivialPursuit1
   public static String[] getEnterQuestions()
   {
     String[] entertainmentQ = new String[10];
-    entertainmentQ[0] = "1. How many seasons of F.R.I.E.N.D.S are there? \n 1. still going \n 2. 10 \n 3. 7 \n 4. 12";
+    entertainmentQ[0] = "Q1. How many seasons of F.R.I.E.N.D.S are there? \n 1. still going \n 2. 10 \n 3. 7 \n 4. 12";
     entertainmentQ[1] = "2";
-    entertainmentQ[2] = "2. What is the name of the new show starring Matt LeBlanc \n 1. F.R.I.E.N.D.S \n 2. Man With a Plan \n 3. Joey! \n 4. FOOL";
+    entertainmentQ[2] = "Q2. What is the name of the new show starring Matt LeBlanc \n 1. F.R.I.E.N.D.S \n 2. Man With a Plan \n 3. Joey! \n 4. FOOL";
     entertainmentQ[3] = "2";
-    entertainmentQ[4] = "3. The first movie of the Fast and Furious franchise was released in what year? \n 1. 2001 \n 2.2005 \n 3. 2002 \n 4. 2007";
+    entertainmentQ[4] = "Q3. The first movie of the Fast and Furious franchise was released in what year? \n 1. 2001 \n 2. 2005 \n 3. 2002 \n 4. 2007";
     entertainmentQ[5] = "1";
-    entertainmentQ[6] = "4. In the movie The Wizard of Oz, what did the Scarecrow want from the wizard? \n 1. Corn \n 2. A brain \n 3. Phone \n 4. Magic";
+    entertainmentQ[6] = "Q4. In the movie The Wizard of Oz, what did the Scarecrow want from the wizard? \n 1. Corn \n 2. A brain \n 3. Phone \n 4. Magic";
     entertainmentQ[7] = "2";
-    entertainmentQ[8] = "5. What is Michael J. Fox's middle name? \n 1. Adam \n 2. Aaron \n 3. Andrew \n 4. Antonio";
+    entertainmentQ[8] = "Q5. What is Michael J. Fox's middle name? \n 1. Adam \n 2. Aaron \n 3. Andrew \n 4. Antonio";
     entertainmentQ[9] = "3";
     return entertainmentQ;
   }
@@ -68,13 +68,13 @@ class trivialPursuit1
     String[] historyQ = new String[10];
     historyQ[0] = "Q1. What year did world war 1 Start? \n 1. 1915 \n 2. 1918 \n 3. 1916 \n 4. 1914";
     historyQ[1] = "4";
-    historyQ[2] = "Q1. What year did world war 1 End? \n 1. 1914 \n 2. 1969 \n 3. 1918 \n 4.1925";
+    historyQ[2] = "Q2. What year did world war 1 End? \n 1. 1914 \n 2. 1969 \n 3. 1918 \n 4. 1925";
     historyQ[3] = "3";
-    historyQ[4] = "who started world war 1? \n 1. Wiz Khalifa \n 2. Meme Makers \n 3. Egyptians \n 4.  Gavrilo Princip";
+    historyQ[4] = "Q3. Who started world war 1? \n 1. Wiz Khalifa \n 2. Meme Makers \n 3. Egyptians \n 4.  Gavrilo Princip";
     historyQ[5] = "4";
-    historyQ[6] = "who was the leader of germany during world war 1? \n 1. Wilhelm II \n 2. Adalbert \n 3. dal \n 4. Gavri";
+    historyQ[6] = "Q4. Who was the leader of germany during world war 1? \n 1. Wilhelm II \n 2. Adalbert \n 3. dal \n 4. Gavri";
     historyQ[7] = "1";
-    historyQ[8] = "who was the superpower before world war 2 \n 1.United States \n 2. British \n 3. Germany \n 4. Soviet Union";
+    historyQ[8] = "Q5. Who was the superpower before world war 2 \n 1. United States \n 2. British \n 3. Germany \n 4. Soviet Union";
     historyQ[9] = "2";
     return historyQ;
   }
@@ -119,7 +119,7 @@ class trivialPursuit1
     for(int i = 0; i < 10; i++)
     {
       System.out.println(getSQ[i]);
-      System.out.print(player1);
+      System.out.print("Using the numbers 1-4 answers the question \n " + player1);
       anwSportsP1 = In.getString();
       System.out.print(player2);
       anwSportsP2 = In.getString();      
@@ -187,7 +187,7 @@ class trivialPursuit1
     for(int i = 0; i < 10; i++)
     {
       System.out.println(getGQ[i]);
-      System.out.print(player1);
+      System.out.print("Using the numbers 1-4 answers the question \n " + player1);
       anwGeoP1 = In.getString();
       System.out.print(player2);
       anwGeoP2 = In.getString();
@@ -257,7 +257,7 @@ class trivialPursuit1
     for(int i = 0; i < 10; i++)
     {
       System.out.println(getEQ[i]);
-      System.out.print(player1);
+      System.out.print("Using the numbers 1-4 answers the question \n " + player1);
       anwEntP1 = In.getString();
       System.out.print(player2);
       anwEntP2 = In.getString();      
@@ -327,7 +327,7 @@ class trivialPursuit1
     for(int i = 0; i < 10; i++)
     {
       System.out.println(getHQ[i]);
-      System.out.print(player1);
+      System.out.print("Using the numbers 1-4 answers the question \n " + player1);
       anwHisP1 = In.getString();
       System.out.print(player2);
       anwHisP2 = In.getString();      
@@ -395,7 +395,7 @@ class trivialPursuit1
     for(int i = 0; i < 10; i++)
     {
       System.out.println(getSQ[i]);
-      System.out.print(player1);
+      System.out.print("Using the numbers 1-4 answers the question \n " + player1);
       anwMusicP1 = In.getString();
       System.out.print(player2);
       anwMusicP2 = In.getString();      
@@ -422,11 +422,11 @@ class trivialPursuit1
         System.out.println("YOU are CORRECT!! " + player2 + "\n ");
         if(i == 8)
         {
+          System.out.println("You have also won a wedge " + player2 + "\n ");
           wedgeCountP2 = getWedgeCount(wedgeCountP2); 
         }
         else
         {
-          System.out.println("You have also won a wedge " + player2 + "\n ");
           scoreMusicCountP2 = scoreP2(scoreMusicCountP2);
         }
       }
@@ -486,7 +486,7 @@ class trivialPursuit1
   {
     // Declaring Arrays for getting the total count
     int[] finalCount = new int[2];
-    // Declaring 
+    // Declaring variables
     String anwSportsP1 = "";
     String anwSportsP2 = "";
     String anwGeoP1 = "";
@@ -497,9 +497,11 @@ class trivialPursuit1
     String anwEntP2 = "";
     String anwMusicP1 = "";
     String anwMusicP2 = "";
+    // Declaring variables to get names
     String player1 = "";
     String player2 = "";
-    System.out.println("* This game is to be played with two players \n* You will be asked five questions each one will get harder each time \n* The fifth question is the one that will give you wedge if you get it right \n Each question carrys one point and the wedge question is worth 10 points \n Player with the highest points will win ");
+    System.out.println("***************************************RULES****************************************");
+    System.out.println("* This game is to be played with two players \n* You will be asked five questions each one will get harder each time \n* The fifth question is the one that will give you wedge if you get it right \n* Each question carrys one point and the wedge question is worth 10 points \n* Player with the highest points will win ");
     System.out.println("Please enter Player 1 name");
     player1 = In.getString();
     System.out.println("Please enter Player 2 name");
@@ -508,7 +510,7 @@ class trivialPursuit1
     
     
     
-    
+    // Calling the name
     sports(anwSportsP1, anwSportsP2, finalCount, player1, player2);
 
     geography(anwGeoP1, anwGeoP2, finalCount, player1, player2); 
@@ -519,6 +521,8 @@ class trivialPursuit1
     
     music(anwMusicP1, anwMusicP2, finalCount, player1, player2);
     
+    
+    // Showing the score and displaying who won
     System.out.println("Here are the score for " + player1 +" "+ finalCount[0] + " and here is the score for " + player2 + " " + finalCount[1]);
     
     if(finalCount[0] > finalCount[1])
@@ -531,7 +535,7 @@ class trivialPursuit1
     }
     else if(finalCount[0] == finalCount[1])
     {
-      System.out.print("Sorry... it ended in a tie");
+      System.out.print("The game ended in a draw");
     }
     
     
